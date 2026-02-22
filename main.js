@@ -5,6 +5,8 @@ const fabricCanvas = new fabric.Canvas('fabric-canvas', {
     selection: true
 });
 
+fabricCanvas.setBackgroundColor('transparent', fabricCanvas.renderAll.bind(fabricCanvas));
+
 let pdfDoc = null;
 let pdfBytesOriginal = null;
 let currentScale = 1.5;
@@ -26,8 +28,6 @@ document.getElementById('pdf-upload').addEventListener('change', async function(
         alert("Error loading PDF. Make sure it is a valid PDF.");
     }
     
-
-    renderPage(1);
 });
 
 async function renderPage(pageNum) {
@@ -37,6 +37,9 @@ async function renderPage(pageNum) {
     const container = document.getElementById('canvas-container');
     container.style.width = viewport.width + 'px';
     container.style.height = viewport.height + 'px';
+    
+    document.getElementById('fabric-canvas').width = viewport.width;
+    document.getElementById('fabric-canvas').height = viewport.height;
 
     const pdfCanvas = document.getElementById('pdf-canvas');
     const ctx = pdfCanvas.getContext('2d');
@@ -81,7 +84,10 @@ function setTool(mode) {
 }
 
 function clearCanvas() {
-    fabricCanvas.clear()
+    fabricCanvas.getObjects().forEach(obj => {
+        fabricCanvas.remove(obj);
+    });
+    fabricCanvas.renderAll();
 }
 
 
