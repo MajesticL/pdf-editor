@@ -33,7 +33,7 @@ input[type='file'] {
 #canvas-container {
     position: relative;
     box-shadow: 0 0 10px;
-    /* display: inline-block; */
+    display: inline-block;
     background: whitesmoke;
 }
 
