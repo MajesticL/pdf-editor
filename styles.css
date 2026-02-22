@@ -21,7 +21,9 @@ button {
     border-radius: 3px;
     margin-right: 5px;
 }
-
+#save {
+    background: #28a745;
+}
 button:hover {
     background: #0056b3;
 }
