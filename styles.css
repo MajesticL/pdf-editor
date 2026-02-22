@@ -21,3 +21,8 @@ button {
     border-radius: 3px;
     margin-right: 5px;
 }
+
+button:hover {
+    background: #0056b3;
+}
+
