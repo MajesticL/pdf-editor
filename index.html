@@ -14,10 +14,10 @@
 <body>
     <div class="toolbar">
         <input type="file" id="pdf-upload" accept="application/pdf">
-        <button onclick="">Add Text</button>
-        <button onclick="">Draw Mode</button>
-        <button onclick="">Select Mode</button>
-        <button onclick="">Save PDF</button>
+        <button onclick="addText()">Add Text</button>
+        <button onclick="setTool('draw')">Draw Mode</button>
+        <button onclick="setTool('select')">Select Mode</button>
+        <button onclick="savePDF()" id="save">Save PDF</button>
     </div>
 
     <div class="canvas-container">
