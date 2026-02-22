@@ -8,6 +8,16 @@ let currentScale = 1.5;
 
 
 // Add PDF Load
+document.getElementById('pdf-upload').addEventListener('change', async function(e) {
+    const file = e.target.files[0];
+    if(!file) return;
+
+    const arrayBuffer = await file.arrayBuffer();
+    pdfBytesOriginal = arrayBuffer;
+
+    const typedArray = new Uint8Array(arrayBuffer);
+    pdfDoc = await pdfjsLib.getDocument(typedArray).promise; 
+})
 
 
 // Add editing tools
