@@ -11,3 +11,12 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+button {
+    padding:  8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-right: 5px;
+}
