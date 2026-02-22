@@ -61,6 +61,11 @@ function addText() {
         fill: 'red' 
     });
     fabricCanvas.add(text)
+    fabricCanvas.setActiveObject(text);
+
+    setTool('select')
+
+    console.log("Text added.")
 }
 // setTool
 function setTool(mode) {
