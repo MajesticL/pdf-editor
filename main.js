@@ -44,6 +44,15 @@ async function renderPage(pageNum) {
 
 // Add editing tools
 // addText
+function addText() {
+    const text = new fabric.IText('Edit Me', { 
+        left: 100, 
+        top: 100, 
+        fontSize: 20,
+        fill: 'red' 
+    });
+    fabricCanvas.add(text)
+}
 // setTool
 
 
