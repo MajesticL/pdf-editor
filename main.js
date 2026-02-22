@@ -28,6 +28,13 @@ async function renderPage(pageNum) {
     const container = document.getElementById('canvas-container');
     container.style.width = viewport.width + 'px';
     container.style.height = viewport.height + 'px';
+
+    const pdfCanvas = document.getElementById('pdf-canvas');
+    const ctx = pdfCanvas.getContext('2d');
+    pdfCanvas.width = viewport.width;
+    pdfCanvas.height = viewport.height;
+
+    await page.render({canvas: ctx, viewport: viewport}).promise
 }
 
 
