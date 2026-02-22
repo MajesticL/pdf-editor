@@ -74,6 +74,7 @@ function setTool(mode) {
         fabricCanvas.isDrawingMode = true;
         fabricCanvas.freeDrawingBrush.color = 'blue';
         fabricCanvas.freeDrawingBrush.width = 5;
+        alert("Draw Mode ON. Draw on the PDF.")
     } else {
         fabricCanvas.isDrawingMode = false;
     }
