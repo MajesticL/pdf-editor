@@ -17,6 +17,8 @@ document.getElementById('pdf-upload').addEventListener('change', async function(
 
     const typedArray = new Uint8Array(arrayBuffer);
     pdfDoc = await pdfjsLib.getDocument(typedArray).promise; 
+
+    renderPage(1);
 })
 
 
