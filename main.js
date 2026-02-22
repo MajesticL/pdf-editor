@@ -74,7 +74,10 @@ async function savePDF() {
     const firstPage = pages[0];
     const { width, height } = firstPage.getSize();
 // Generates image from fabric.js canvas
-
+    const dataUrl = fabricCanvas.toDataURL({
+        format: 'png',
+        multiplier: 1 / currentScale
+    });
 // Embed image  into the PDF
 
 // Draw image on top of original page
