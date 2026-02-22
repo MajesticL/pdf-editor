@@ -33,10 +33,12 @@ input[type='file'] {
 }
 
 #canvas-container {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     box-shadow: 0 0 10px;
-    display: inline-block;
     background: whitesmoke;
+    z-index: 10;
 }
 
 /* #pdf-canvas {
