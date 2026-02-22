@@ -1,6 +1,9 @@
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
-const fabricCanvas = new fabric.Canvas('fabric-canvas', { idDrawingMode: false});
+const fabricCanvas = new fabric.Canvas('fabric-canvas', { 
+    idDrawingMode: false,
+    selection: true
+});
 
 let pdfDoc = null;
 let pdfBytesOriginal = null;
