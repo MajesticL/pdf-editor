@@ -2,6 +2,10 @@ pdfjsLib.GlobalWorkerOptions.workerSrc ='https://cdnjs.cloudflare.com/ajax/libs/
 
 const fabricCanvas = new fabric.Canvas('fabric-canvas', { idDrawingMode: false});
 
+let pdfDoc = null;
+let pdfBytesOriginal = null;
+let currentScale = 1.5;
+
 
 // Add PDF Load
 
