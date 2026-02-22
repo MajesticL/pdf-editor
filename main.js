@@ -44,25 +44,25 @@ async function renderPage(pageNum) {
 
 // Add editing tools
 // addText
-// function addText() {
-//     const text = new fabric.IText('Edit Me', { 
-//         left: 100, 
-//         top: 100, 
-//         fontSize: 20,
-//         fill: 'red' 
-//     });
-//     fabricCanvas.add(text)
-// }
-// // setTool
-// function setTool(mode) {
-//     if (mode === 'draw') {
-//         fabricCanvas.isDrawingMode = true;
-//         fabricCanvas.freeDrawingBrush.color = 'blue';
-//         fabricCanvas.freeDrawingBrush.width = 3;
-//     } else {
-//         fabricCanvas.isDrawingMode = false;
-//     }
-// }
+function addText() {
+    const text = new fabric.IText('Edit Me', { 
+        left: 100, 
+        top: 100, 
+        fontSize: 20,
+        fill: 'red' 
+    });
+    fabricCanvas.add(text)
+}
+// setTool
+function setTool(mode) {
+    if (mode === 'draw') {
+        fabricCanvas.isDrawingMode = true;
+        fabricCanvas.freeDrawingBrush.color = 'blue';
+        fabricCanvas.freeDrawingBrush.width = 3;
+    } else {
+        fabricCanvas.isDrawingMode = false;
+    }
+}
 
 
 // Add PDF Save
