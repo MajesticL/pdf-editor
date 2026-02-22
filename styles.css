@@ -26,3 +26,7 @@ button:hover {
     background: #0056b3;
 }
 
+input[type='file'] {
+    margin-right: 15px;
+}
+
