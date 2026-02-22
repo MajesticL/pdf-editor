@@ -80,6 +80,10 @@ function setTool(mode) {
     }
 }
 
+function clearCanvas() {
+    fabricCanvas.clear()
+}
+
 
 // Add PDF Save
 async function savePDF() {
