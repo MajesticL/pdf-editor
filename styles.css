@@ -39,22 +39,18 @@ input[type='file'] {
     z-index: 10 !important; 
 }
 
-#canvas-container {
+ #canvas-container {
     position: relative;
     box-shadow: 0 0 10px;
     background: whitesmoke;
+    margin-top: 20px;
+    min-height: 100px; 
+    width: 100%;
 }
 
-/* #pdf-canvas {
+#pdf-canvas {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1
 }
-
-#fabric-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-} */
