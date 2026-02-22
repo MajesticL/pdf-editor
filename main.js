@@ -34,7 +34,11 @@ async function renderPage(pageNum) {
     pdfCanvas.width = viewport.width;
     pdfCanvas.height = viewport.height;
 
-    await page.render({canvas: ctx, viewport: viewport}).promise
+    await page.render({canvas: ctx, viewport: viewport}).
+    
+    fabricCanvas.setWidth(viewport.width);
+    fabricCanvas.setHeight(viewport.height);
+    fabricCanvas.renderAll();
 }
 
 
