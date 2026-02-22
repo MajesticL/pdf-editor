@@ -79,11 +79,17 @@ async function savePDF() {
         multiplier: 1 / currentScale
     });
 // Embed image  into the PDF
-
+    const pngImage = await pdfLibDoc.embedPng(dataUrl);
 // Draw image on top of original page
-
+    firstPage.drawImage(pngImage, {
+        x: 0,
+        y: 0,
+        width: width,
+        height: height,
+    });
 // Save/Download
-
+    const modifiedPdfBytes = await pdfLibDoc.save();
+    download(modifiedPdfBytes, "edited.pdf", "application/pdf");
+}
 
 // Helper for download
-}
