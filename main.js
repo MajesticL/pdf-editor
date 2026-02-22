@@ -16,9 +16,9 @@ document.getElementById('pdf-upload').addEventListener('change', async function(
     if(!file) return;
 
     const arrayBuffer = await file.arrayBuffer();
-    pdfBytesOriginal = arrayBuffer;
-
+    pdfBytesOriginal = arrayBuffer.slice(0);
     const typedArray = new Uint8Array(arrayBuffer);
+    
     pdfDoc = await pdfjsLib.getDocument(typedArray).promise; 
 
     renderPage(1);
