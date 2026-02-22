@@ -58,7 +58,8 @@ function addText() {
         left: 100, 
         top: 100, 
         fontSize: 20,
-        fill: 'red' 
+        fill: 'red',
+        fontFamily: 'Helvetica'
     });
     fabricCanvas.add(text)
     fabricCanvas.setActiveObject(text);
