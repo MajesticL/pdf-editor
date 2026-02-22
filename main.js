@@ -73,7 +73,7 @@ function setTool(mode) {
     if (mode === 'draw') {
         fabricCanvas.isDrawingMode = true;
         fabricCanvas.freeDrawingBrush.color = 'blue';
-        fabricCanvas.freeDrawingBrush.width = 3;
+        fabricCanvas.freeDrawingBrush.width = 5;
     } else {
         fabricCanvas.isDrawingMode = false;
     }
