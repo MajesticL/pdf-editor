@@ -19,7 +19,16 @@ document.getElementById('pdf-upload').addEventListener('change', async function(
     pdfDoc = await pdfjsLib.getDocument(typedArray).promise; 
 
     renderPage(1);
-})
+});
+
+async function renderPage(pageNum) {
+    const page = await pdfDoc.getPage(pageNum);
+    const viewport = page.getViewport({scale: currentScale});
+
+    const container = document.getElementById('canvas-container');
+    container.style.width = viewport.width + 'px';
+    container.style.height = viewport.height + 'px';
+}
 
 
 // Add editing tools
