@@ -19,7 +19,13 @@ document.getElementById('pdf-upload').addEventListener('change', async function(
     pdfBytesOriginal = arrayBuffer.slice(0);
     const typedArray = new Uint8Array(arrayBuffer);
     
-    pdfDoc = await pdfjsLib.getDocument(typedArray).promise; 
+    try {
+        pdfDoc = await pdfjsLib.getDocument(typedArray).promise; 
+    } catch(err) {
+        console.error(err);
+        alert("Error loading PDF. Make sure it is a valid PDF.");
+    }
+    
 
     renderPage(1);
 });
