@@ -66,9 +66,13 @@ function setTool(mode) {
 
 
 // Add PDF Save
-
+async function savePDF() {
+    if (!pdfBytesOriginal) return alert("Please load a PDF first");
 // Load original pdf into pdf lib
-
+    const pdfLibDoc = await PDFLib.PDFDocument.load(pdfBytesOriginal);
+    const pages = pdfLibDoc.getPages();
+    const firstPage = pages[0];
+    const { width, height } = firstPage.getSize();
 // Generates image from fabric.js canvas
 
 // Embed image  into the PDF
@@ -79,3 +83,4 @@ function setTool(mode) {
 
 
 // Helper for download
+}
