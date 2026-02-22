@@ -1,7 +1,7 @@
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
 const fabricCanvas = new fabric.Canvas('fabric-canvas', { 
-    idDrawingMode: false,
+    isDrawingMode: false,
     selection: true
 });
 
@@ -43,7 +43,7 @@ async function renderPage(pageNum) {
     pdfCanvas.width = viewport.width;
     pdfCanvas.height = viewport.height;
 
-    await page.render({canvas: ctx, viewport: viewport}).promise;
+    await page.render({canvasContext: ctx, viewport: viewport}).promise;
     
     fabricCanvas.setWidth(viewport.width);
     fabricCanvas.setHeight(viewport.height);
@@ -87,9 +87,10 @@ function clearCanvas() {
 
 // Add PDF Save
 async function savePDF() {
-    if (!pdfBytesOriginal) return alert("Please load a PDF first");
+    if (!pdfBytesOriginal) {alert("Load a PDF first"); return;}
 // Load original pdf into pdf lib
-    const pdfLibDoc = await PDFLib.PDFDocument.load(pdfBytesOriginal);
+    const { PDFDocument } = PDFLib;
+    const pdfLibDoc = await PDFDocument.load(pdfBytesOriginal);
     const pages = pdfLibDoc.getPages();
     const firstPage = pages[0];
     const { width, height } = firstPage.getSize();
@@ -109,7 +110,7 @@ async function savePDF() {
     });
 // Save/Download
     const modifiedPdfBytes = await pdfLibDoc.save();
-    download(modifiedPdfBytes, "edited.pdf", "application/pdf");
+    download(modifiedPdfBytes, "edited-document.pdf", "application/pdf");
 }
 
 // Helper for download
@@ -119,6 +120,7 @@ function download(data, filename, type) {
     const a = document.createElement('a');
     a.href = url;
     a.download = filename;
+    document.body.appendChild(a)
     a.click();
     window.URL.revokeObjectURL(url);
 }
